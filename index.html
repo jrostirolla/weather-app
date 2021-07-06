@@ -5,15 +5,105 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>WEATHER!</title>
+        <link rel="noramliser" href="normalise.css">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <header>
-            <h1>Weather Dashboard</h1>
+            <h1>☀ Weather Dashboard ☀</h1>
         </header>
         <main>
-
+            <section id="city-search-container" class="left-side">
+                <div id="seach-area" class="padding">
+                    <h2>Search for a city: </h2>
+                    <input id="searchObject" placeholder="Type your desired city here...">
+                    <br>
+                    <button id="searchButton">Search</button>
+                    <br>
+                    
+                </div>
+                <hr>
+                <div id="previous-search-objects">
+                    <!-- script to add in previous search items -->
+                </div>
+            </section>
+        <div id="right-side">
+            <section id="main-results-container">
+                <h2>[ City ] <span id="weatherSymbolMain"> [ 😐 ] </span></h2>
+                <h3>Temp: <span id="tempMain"> [ temp calc. ] </span></h3>
+                <h3>Wind: <span id="windMain"> [ wind calc. ] </span></h3>
+                <h3>Humidity: <span> [ hum. calc. ] </span></h3>
+                <h3>UV Index: <span id="uvMain"> [ UV calc. ] </span></h3>
+            </section>
+            <br>
+           
+            <section id="five-day-container">
+                <hr id="hr">
+                <br>
+                <h2>5 Day Forecast:</h2>
+                    <div id="day-one" class="five-days">
+                        <h4 id="date-one"> [ date one ] </h4>
+                        <hr>
+                        <br>
+                        <p id="day-one-symbol"> [ 😐 ] </p>
+                        <br>
+                        <h5>Temp: <span id="day-one-temp">[ ... ]</span></h5>
+                        <br>
+                        <h5>Wind: <span id="day-one-wind">[ ... ]</span></h5>
+                        <br>
+                        <h5>Humidity <span id="day-one-hum">[ ... ]</span></h5>
+                    </div>
+                    <div id="day-two" class="five-days">
+                        <h4 id="date-two"> [ date two ] </h4>
+                        <hr>
+                        <br>
+                        <p id="day-two-symbol"> [ 😐 ] </p>
+                        <br>
+                        <h5>Temp: <span id="day-two-temp">[ ... ]</span></h5>
+                        <br>
+                        <h5>Wind: <span id="day-two-wind">[ ... ]</span></h5>
+                        <br>
+                        <h5>Humidity <span id="day-two-hum">[ ... ]</span></h5>
+                    </div>
+                    <div id="day-three" class="five-days">
+                        <h4 id="date-three"> [ date three ] </h4>
+                        <hr>
+                        <br>
+                        <p id="day-three-symbol"> [ 😐 ] </p>
+                        <br>
+                        <h5>Temp: <span id="day-three-temp">[ ... ]</span></h5>
+                        <br>
+                        <h5>Wind: <span id="day-three-wind">[ ... ]</span></h5>
+                        <br>
+                        <h5>Humidity <span id="day-three-hum">[ ... ]</span></h5>
+                    </div>
+                    <div id="day-four" class="five-days">
+                        <h4 id="date-four"> [ date four ] </h4>
+                        <hr>
+                        <br>
+                        <p id="day-four-symbol"> [ 😐 ] </p>
+                        <br>
+                        <h5>Temp: <span id="day-four-temp">[ ... ]</span></h5>
+                        <br>
+                        <h5>Wind: <span id="day-four-wind">[ ... ]</span></h5>
+                        <br>
+                        <h5>Humidity <span id="day-four-hum">[ ... ]</span></h5>
+                    </div>
+                    <div id="day-five" class="five-days">
+                        <h4 id="date-five"> [ date five ] </h4>
+                        <hr>
+                        <br>
+                        <p id="day-five-symbol"> [ 😐 ] </p>
+                        <br>
+                        <h5>Temp: <span id="day-five-temp">[ ... ]</span></h5>
+                        <br>
+                        <h5>Wind: <span id="day-five-wind">[ ... ]</span></h5>
+                        <br>
+                        <h5>Humidity <span id="day-five-hum">[ ... ]</span></h5>
+                    </div>
+            </section>
+        </div>
         </main>
         <footer>
 
