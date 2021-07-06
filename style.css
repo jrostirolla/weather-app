@@ -60,13 +60,17 @@ hr {
 }
 
 #searchObject {
-    width: 345px;
+    width: 332px;
     margin: 10px 0 0px 0;
+    padding: 7px;
+
 }
 
 #searchButton {
     width: 350px;
     margin: 10px 0 10px 0;
+    padding: 7px;
+
 }
 
 
@@ -108,4 +112,14 @@ hr {
 
 .contents {
     padding: 5px 0px 5px 0px;
+}
+
+.previous {
+    list-style-type: none;
+    padding: 10px;
+    margin: 20px 0 5px 10px;
+    background-color: var(--palette-four);
+    border-radius: 15px;
+    border: solid 3px;
+    width: 300px;
 }
