@@ -14,11 +14,12 @@ padding: 0px;
 }
 
 body {
-     background-color: dimgrey;
+     background-color: lightgray;
 }
 
 h1 {
-    background-color: var(--palette-gold);
+    background-color: rgb(172, 89, 89);
+    color: whitesmoke;
     font-family: system-ui;
     text-align: center;
     padding: 10px;
@@ -31,7 +32,7 @@ h4 {
 }
 
 h3 {
-    margin: 20px 0 20px 0;
+    margin: 45px 0 20px 0;
     font-size: 20px;
 }
 
@@ -56,7 +57,7 @@ hr {
 
 #city-search-container {
     font-family: system-ui;
-    background-color: var(--palette-two);
+    background-color: rgb(241, 169, 141);
 }
 
 #searchObject {
@@ -70,7 +71,8 @@ hr {
     width: 350px;
     margin: 10px 0 10px 0;
     padding: 7px;
-
+    background-color: rgb(172, 89, 89);
+    color: whitesmoke;
 }
 
 
@@ -83,30 +85,30 @@ hr {
 
 #right-side {
     font-family: monospace;
-    /* background-color: var(--palette-one); */
+
     position: absolute;
     left: 400px;
     top: 80px;
 }
 
 #main-results-container {
-    background-color: var(--palette-three);
+    background-color: whitesmoke;
     padding: 15px;
     height: 350px;
     width: 1040px;
-    border: solid 5px orangered;
+    border: solid 5px rgb(172, 89, 89);
     border-radius: 15px;
 }
 
 .five-days {
-    background-color: var(--palette-purple);
-    color: var(--palette-three);
+    background-color: whitesmoke;
+    color: black;
     padding: 15px;
     width: 150px;
     height: 160px;
-    margin: 15px;
+    margin: 10px;
     display: inline-block;
-    border: solid 5px orangered;
+    border: solid 5px  rgb(172, 89, 89);
     border-radius: 15px;
 }
 
@@ -118,7 +120,8 @@ hr {
     list-style-type: none;
     padding: 10px;
     margin: 20px 0 5px 10px;
-    background-color: var(--palette-four);
+    background-color:  rgb(172, 89, 89);
+    color: white;
     border-radius: 15px;
     border: solid 3px;
     width: 300px;

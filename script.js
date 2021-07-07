@@ -1,9 +1,44 @@
 //TODO: figure out the fetch mechanics
     //TODO: Once I know this, inspect the data from the API and see how to use it
+let myAPIKey = "a0122b050d686b7ed8e25c516d150d55";
+let weatherLocation;
+let searchOutput;
 
-//TODO: install moment.js parameters
+// Pulling search function
+function weatherSearch() {
+    let location= document.getElementById("searchObject").value;
+    weatherLocation = location;
 
-//TODO: write a "for" loop for the days of the week
+//saving search to localStorage
+    localStorage.setItem("mostRecent", weatherLocation)
+if (localStorage.getItem("mostRecent") === " ") {
+    localStorage.setItem("secondSearch", weatherLocation)
+    if (localStorage.getItem("secondSearch") === " ") {
+        localStorage.setItem("thirdSearch", weatherLocation)
+        if (localStorage.getItem("thirdSearch") === " ") {
+            localStorage.setItem("fourthSearch", weatherLocation)
+        }
+    }
+}
+
+
+let requestedURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherLocation}&units=metric&appid=${myAPIKey}`;
+
+fetch(requestedURL)
+    .then(function (response) {
+        return response.json();
+    }) 
+    .then(function (data) {
+        console.log(data);
+        searchOutput = data;
+    });
+
+function setValues() {
+    
+}
+
+}
+
 
 //TODO: autofill the form when search has been completed
 
