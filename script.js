@@ -1,6 +1,10 @@
 let myAPIKey = "a0122b050d686b7ed8e25c516d150d55";
 let weatherLocation;
 let searchOutput;
+let searchOutput2;
+let searchLan;
+let searchLon;
+let newRequest;
 
 let currentDate = moment().format("DD/MM/YY");
 
@@ -83,49 +87,61 @@ fetch(requestedURL)
     .then(function (data) {
         console.log(data);
         searchOutput = data;
-    }).then(function setValues() {
+        searchLan = searchOutput.city.coord.lat;
+        searchLon = searchOutput.city.coord.lon;
+        newRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=${searchLan}&lon=${searchLon}&appid=${myAPIKey}&units=metric`
+    fetch(newRequest)
+        .then (function (response) {
+            return response.json();
+        })
+        .then (function (data) {
+            searchOutput2 = data;
+        })
+        .then(function setValues() {
     //main setters
     cityMain.textContent = searchOutput.city.name;
     //symbolMain.textContent = //TODO: Ask for assistance on this
-    tempMain.textContent = `${searchOutput.list[4].main.temp} °C`;
-    windMain.textContent = `${searchOutput.list[4].wind.speed} MPH`;
-    humMain.textContent = `${searchOutput.list[4].main.humidity} %`;
-    //uvMain.textContent = //TODO: find this info in the array
+    tempMain.textContent = `${searchOutput2.current.temp} °C`;
+    windMain.textContent = `${searchOutput2.current.wind_speed} KPH`;
+    humMain.textContent = `${searchOutput2.current.humidity} %`;
+    uvMain.textContent = `${searchOutput2.current.uvi}`
+        //TODO: create if statement for this colour change
 
     //day one setters
     //TODO: Symbol code - once figured out how to...
-    tempOne.textContent = `${searchOutput.list[12].main.temp} °C`;
-    windOne.textContent = `${searchOutput.list[12].wind.speed} MPH`;
-    humOne.textContent = `${searchOutput.list[12].main.humidity} %`;
+    tempOne.textContent = `${searchOutput2.daily[1].temp.day} °C`;
+    windOne.textContent = `${searchOutput2.daily[1].wind_speed} MPH`;
+    humOne.textContent = `${searchOutput2.daily[1].humidity} %`;
 
     //day two setters
     //TODO: Symbol code - once figured out how to...
-    tempTwo.textContent = `${searchOutput.list[20].main.temp} °C`;
-    windTwo.textContent = `${searchOutput.list[20].wind.speed} MPH`;
-    humTwo.textContent = `${searchOutput.list[20].main.humidity} %`;
+    tempTwo.textContent = `${searchOutput2.daily[2].temp.day} °C`;
+    windTwo.textContent = `${searchOutput2.daily[2].wind_speed} MPH`;
+    humTwo.textContent = `${searchOutput2.daily[2].humidity} %`;
 
     //day three setters
     //TODO: Symbol code - once figured out how to...
-    tempThree.textContent = `${searchOutput.list[28].main.temp} °C`;
-    windThree.textContent = `${searchOutput.list[28].wind.speed} MPH`;
-    humThree.textContent = `${searchOutput.list[28].main.humidity} %`;
+    tempThree.textContent = `${searchOutput2.daily[3].temp.day} °C`;
+    windThree.textContent = `${searchOutput2.daily[3].wind_speed} MPH`;
+    humThree.textContent = `${searchOutput2.daily[3].humidity} %`;
 
     //day four setters
     //TODO: Symbol code - once figured out how to...
-    tempFour.textContent = `${searchOutput.list[36].main.temp} °C`;
-    windFour.textContent = `${searchOutput.list[36].wind.speed} MPH`;
-    humFour.textContent = `${searchOutput.list[36].main.humidity} %`;
+    tempFour.textContent = `${searchOutput2.daily[4].temp.day} °C`;
+    windFour.textContent = `${searchOutput2.daily[4].wind_speed} MPH`;
+    humFour.textContent = `${searchOutput2.daily[4].humidity} %`;
+
+    //day five setters
+    //TODO: Symbol code - once figured out how to...
+    tempFive.textContent = `${searchOutput2.daily[5].temp.day} °C`;
+    windFive.textContent = `${searchOutput2.daily[5].wind_speed} MPH`;
+    humFive.textContent = `${searchOutput2.daily[5].humidity} %`;
 });
+})    
+   
 
 }
 
-
-
-
-
-
-
-//TODO: autofill the form when search has been completed
 
 //TODO: create if statement to change text hightlight of UV text depending on levels
 
