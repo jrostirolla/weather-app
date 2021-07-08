@@ -74,9 +74,8 @@ function weatherSearch() {
 //     }
 // }
 
-
 let requestedURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherLocation}&units=metric&appid=${myAPIKey}`;
-
+    
 fetch(requestedURL)
     .then(function (response) {
         return response.json();
@@ -84,20 +83,42 @@ fetch(requestedURL)
     .then(function (data) {
         console.log(data);
         searchOutput = data;
-    });
-
-// value setter
-function setValues() {
+    }).then(function setValues() {
     //main setters
     cityMain.textContent = searchOutput.city.name;
+    //symbolMain.textContent = //TODO: Ask for assistance on this
+    tempMain.textContent = `${searchOutput.list[4].main.temp} °C`;
+    windMain.textContent = `${searchOutput.list[4].wind.speed} MPH`;
+    humMain.textContent = `${searchOutput.list[4].main.humidity} %`;
+    //uvMain.textContent = //TODO: find this info in the array
+
+    //day one setters
+    //TODO: Symbol code - once figured out how to...
+    tempOne.textContent = `${searchOutput.list[12].main.temp} °C`;
+    windOne.textContent = `${searchOutput.list[12].wind.speed} MPH`;
+    humOne.textContent = `${searchOutput.list[12].main.humidity} %`;
+
+    //day two setters
+    //TODO: Symbol code - once figured out how to...
+    tempTwo.textContent = `${searchOutput.list[20].main.temp} °C`;
+    windTwo.textContent = `${searchOutput.list[20].wind.speed} MPH`;
+    humTwo.textContent = `${searchOutput.list[20].main.humidity} %`;
+
+    //day three setters
+    //TODO: Symbol code - once figured out how to...
+    tempThree.textContent = `${searchOutput.list[28].main.temp} °C`;
+    windThree.textContent = `${searchOutput.list[28].wind.speed} MPH`;
+    humThree.textContent = `${searchOutput.list[28].main.humidity} %`;
+
+    //day four setters
+    //TODO: Symbol code - once figured out how to...
+    tempFour.textContent = `${searchOutput.list[36].main.temp} °C`;
+    windFour.textContent = `${searchOutput.list[36].wind.speed} MPH`;
+    humFour.textContent = `${searchOutput.list[36].main.humidity} %`;
+});
+
 }
 
-tempMain.textContent = searchOutput.list[4].main.temp;
-
-
-setValues();
-
-}
 
 
 
