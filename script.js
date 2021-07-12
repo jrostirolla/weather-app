@@ -105,7 +105,20 @@ fetch(requestedURL)
     windMain.textContent = `${searchOutput2.current.wind_speed} KPH`;
     humMain.textContent = `${searchOutput2.current.humidity} %`;
     uvMain.textContent = `${searchOutput2.current.uvi}`
+
+if (uvMain.textContent <= 5) {
+    uvMain.className = "goodUV"
+} else if (uvMain <= 7) {
+    uvMain.className = "warningUV"
+} else {
+    uvMain.className = "badUV"
+}
+
+// 3-5 = low
+// 6-7 = medium
+// 8-10 = high
         //TODO: create if statement for this colour change
+
 
     //day one setters
     //TODO: Symbol code - once figured out how to...

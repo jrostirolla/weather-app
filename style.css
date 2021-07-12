@@ -6,6 +6,9 @@
     --palette-five: #069E2D;
     --palette-purple: #6A0136;
     --palette-gold: #BFAB25;
+    --good-uv: green;
+    --warning-uv: rgb(214, 214, 2);
+    --bad-uv: rgb(243, 32, 32);
 }
 
 * {
@@ -36,6 +39,18 @@ h4 {
 
 hr {
     color: black;
+}
+
+.goodUV{
+    background-color: var(--good-uv);
+}
+
+.warningUV {
+    background-color: var(--warning-uv);
+}
+
+.badUV {
+    background-color: var(--bad-uv);
 }
 
 #main-results-container h2 {
